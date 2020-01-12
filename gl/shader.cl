@@ -136,18 +136,8 @@ __kernel void march(
       - sin(look.y),
       cos(look.y) * cos(look.x)
     });
-    // view+= dir*0.5f;
-    // view.x+= sin(ax);
-    // view.y+= look.y*cos(look.y);
 
 
-
-    // float3 look_at = {1.0, ax, ay};
-    // dir = normalize(look_at);
-
-
-    // float3  dir = { 0.0, 0.0, -1.0 };
-    // float3 col = 0.0;
     float tot_d = 0.0;
     float min_d = 0.0;
     float3 col = 0.0;(float3){0.05, 0.1, 0.1};
@@ -163,21 +153,6 @@ __kernel void march(
       if (step == 0 || d < min_d) min_d = d;
 
       if (d < MIN_DIST) {
-        // float3 n = calcNormal(p, MIN_DIST)*-dir;
-        // n*= dir;;
-        // n[0] = fabs(n[0] + n[1]);
-        // n[1] = fabs(n[0] + n[1]);
-        // n[2] = fabs(n[0] + n[1]);
-
-        // col[0] = 0;
-        // col[1] = 0;
-        // col[2] = 0;
-        // col[0] = 255 * fabs(cos(n.z));
-        // col[1] = 255 * fabs(- sin(n.y));
-        // col[2] = 255 * fabs(cos(n.y) * cos((float)0.0));
-        // col = n * (20 / (20 + tot_d));
-        // n = 1.0;
-        col = mat;
         hit = true;
         // ret_hits[gid] = view;
         break;
